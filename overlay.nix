@@ -1,7 +1,9 @@
-_: super: {
+self: super: rec {
   python3 = super.python3.override {
-    packageOverrides = pyself: _: {
-      dasung = pyself.callPackage ./derivation.nix {};
+    packageOverrides = self: super: {
+      dasung = super.callPackage ./derivation.nix {};
     };
   };
+  pythonPackages = python3.pkgs;
+  dasung = super.callPackage ./derivation.nix {};
 }

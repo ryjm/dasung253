@@ -5,6 +5,7 @@
     overlays = [
       (import ./overlay.nix)
     ];
+    pkgs.overlays = [ (import ./overlay.nix) ];
   };
 in
-  pkgs.python3Packages.dasung
+  pkgs.dasung
