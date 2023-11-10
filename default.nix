@@ -1,6 +1,6 @@
 # { pkgs ? import <nixpkgs> {}, ... }:
 # pkgs.callPackage ./derivation.nix {}
-{nixpkgs ? <nixpkgs>}: let
+{nixpkgs }: let
   pkgs = import nixpkgs {
     overlays = [
       (import ./overlay.nix)
